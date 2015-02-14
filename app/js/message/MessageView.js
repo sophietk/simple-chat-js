@@ -5,9 +5,8 @@ var MessageView = Backbone.View.extend({
     className: 'row message',
 
     events: {
-        'click .icon': 'open',
-        'click .button.edit': 'openEditDialog',
-        'click .button.delete': 'destroy'
+        'keyup textarea': 'checkIfSubmit',
+        'submit': 'submitMessage'
     },
 
     template: $('#tpl-message').html(),
@@ -16,6 +15,21 @@ var MessageView = Backbone.View.extend({
         this.$el.html(this.template);
 
         return this;
+    },
+
+    checkIfSubmit: function (event) {
+        if (event.keyCode === 13) this.submitMessage(event);
+    },
+
+    submitMessage: function (event) {
+        event.preventDefault();
+        Backbone.trigger('addMessage', {
+            name: 'Me',
+            content: this.$('textarea').val(),
+            timestamp: new Date().getTime()
+        });
+
+        this.$('textarea').val('');
     }
 
 });
