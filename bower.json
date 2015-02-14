@@ -1,0 +1,14 @@
+{
+  "name": "simple-chat-js",
+  "version": "0.0.1",
+  "authors": [
+    "sophietk <sophie.tk@gmail.com>"
+  ],
+  "description": "simple chat js",
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "lodash": "~3.2.0",
+    "backbone": "~1.1.2",
+    "materialize": "~0.95.2"
+  }
+}
