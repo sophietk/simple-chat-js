@@ -8,6 +8,8 @@
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="bower_components/lodash/lodash.js"></script>
     <script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
+    <script type="text/javascript" src="bower_components/mustache/mustache.js"></script>
+    <script type="text/javascript" src="bower_components/moment/moment.js"></script>
     <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.js"></script>
 </head>
 <body>
@@ -16,58 +18,49 @@
     <h4>Simple chat js</h4>
 </header>
 
-<main class="container">
-
-    <div class="row">
-        <!-- discussion and message form -->
-        <div class="col s9">
-            <div class="row discussion">
-                <span class="badge">10:23:06</span><span class="name">Jack</span>: bla bla
-                <br><span class="badge">10:24:31</span><span class="name Vlad">Vlad</span>: bla bla
-                <br><span class="badge">10:24:48</span><span class="name Frank">Frank</span>: bla bla
-                <br><span class="badge">10:25:45</span><span class="name Paul">Paul</span>: bla bla
-                <br><span class="badge">10:46:13</span><span class="name Frank">Frank</span>: bla bla
-            </div>
-            <form class="row message">
-                <div class="col s9">
-                    <div class="input-field">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Your message</label>
-                    </div>
-                </div>
-                <button class="col s3 btn waves-effect waves-light message-btn" type="submit" name="action">Submit
-                    <i class="mdi-content-send right"></i>
-                </button>
-            </form>
-        </div>
-
-        <!-- friends list -->
-        <div class="col s3 friends">
-            <ul class="collection with-header">
-                <li class="collection-header">
-                    <h5>Your friends</h5>
-                </li>
-                <li class="collection-item">
-                    <img src="img/skellington.png" alt="Jack's avatar">
-                    <span class="firstName">Jack</span>
-                </li>
-                <li class="collection-item">
-                    <img src="img/frankenstein.png" alt="Frank's avatar">
-                    <span class="firstName">Frank</span>
-                </li>
-                <li class="collection-item">
-                    <img src="img/dracula.png" alt="Vlad's avatar">
-                    <span class="firstName">Vlad</span>
-                </li>
-                <li class="collection-item">
-                    <img src="img/alien.png" alt="Paul's avatar">
-                    <span class="firstName">Paul</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</main>
+<main class="container"></main>
 
 </body>
+
+<!-- Mustache templates -->
+<script type="text/mustache" id="tpl-discussion">
+{{#messages}}
+    <br><span class="badge">{{#timestamp}}{{formatTime}}{{/timestamp}}</span><span class="name {{name}}">{{name}}</span>: {{content}}
+{{/messages}}
+</script>
+
+<script type="text/mustache" id="tpl-message">
+<div class="col s9">
+    <div class="input-field">
+        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <label for="textarea1">Your message</label>
+    </div>
+</div>
+<button class="col s3 btn waves-effect waves-light message-btn" type="submit" name="action">Submit
+    <i class="mdi-content-send right"></i>
+</button>
+</script>
+
+<script type="text/mustache" id="tpl-friends">
+<ul class="collection with-header">
+    <li class="collection-header">
+        <h5>Your friends</h5>
+    </li>
+    {{#friends}}
+    <li class="collection-item">
+        <img src="img/{{avatar}}" alt="{{name}}'s avatar">
+        <span class="firstName">{{name}}</span>
+    </li>
+    {{/friends}}
+</ul>
+</script>
+
+<script type="application/javascript" src="js/discussion/DiscussionCollection.js"></script>
+<script type="application/javascript" src="js/discussion/DiscussionView.js"></script>
+<script type="application/javascript" src="js/message/MessageView.js"></script>
+<script type="application/javascript" src="js/friends/FriendsCollection.js"></script>
+<script type="application/javascript" src="js/friends/FriendsView.js"></script>
+<script type="application/javascript" src="js/ChatView.js"></script>
+<script type="application/javascript" src="js/main.js"></script>
+
 </html>
