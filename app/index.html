@@ -12,6 +12,62 @@
 </head>
 <body>
 
+<header class="teal lighten-1 white-text">
+    <h4>Simple chat js</h4>
+</header>
+
+<main class="container">
+
+    <div class="row">
+        <!-- discussion and message form -->
+        <div class="col s9">
+            <div class="row discussion">
+                <span class="badge">10:23:06</span><span class="name">Jack</span>: bla bla
+                <br><span class="badge">10:24:31</span><span class="name Vlad">Vlad</span>: bla bla
+                <br><span class="badge">10:24:48</span><span class="name Frank">Frank</span>: bla bla
+                <br><span class="badge">10:25:45</span><span class="name Paul">Paul</span>: bla bla
+                <br><span class="badge">10:46:13</span><span class="name Frank">Frank</span>: bla bla
+            </div>
+            <form class="row message">
+                <div class="col s9">
+                    <div class="input-field">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Your message</label>
+                    </div>
+                </div>
+                <button class="col s3 btn waves-effect waves-light message-btn" type="submit" name="action">Submit
+                    <i class="mdi-content-send right"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- friends list -->
+        <div class="col s3 friends">
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h5>Your friends</h5>
+                </li>
+                <li class="collection-item">
+                    <img src="img/skellington.png" alt="Jack's avatar">
+                    <span class="firstName">Jack</span>
+                </li>
+                <li class="collection-item">
+                    <img src="img/frankenstein.png" alt="Frank's avatar">
+                    <span class="firstName">Frank</span>
+                </li>
+                <li class="collection-item">
+                    <img src="img/dracula.png" alt="Vlad's avatar">
+                    <span class="firstName">Vlad</span>
+                </li>
+                <li class="collection-item">
+                    <img src="img/alien.png" alt="Paul's avatar">
+                    <span class="firstName">Paul</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</main>
 
 </body>
 </html>

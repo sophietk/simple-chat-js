@@ -1,0 +1,47 @@
+/**** Chat ****/
+
+.discussion {
+  height: 360px;
+  padding: 20px;
+  overflow-y: scroll;
+
+  .name {
+    font-weight: bold;
+
+    &.Me {
+      color: #0094CF;
+    }
+    &.Jack {
+      color: #999;
+    }
+    &.Frank {
+      color: #51a541;
+    }
+    &.Vlad {
+      color: #ea7d5c;
+    }
+    &.Paul {
+      color: #bf74ca;
+    }
+  }
+}
+
+.message {
+  &-btn {
+    height: 100px;
+  }
+}
+
+/**** Friends list ****/
+
+.friends {
+  .collection {
+    border: none;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+  }
+}
