@@ -1,5 +1,7 @@
 # simple chat js
 
+[![travis status](https://travis-ci.org/sophietk/test-ci.svg?branch=heroku)](https://travis-ci.org/sophietk/test-ci)
+
 technos:
 
 * tools: node, grunt, bower, sass
