@@ -5,8 +5,23 @@ technos:
 * tools: node, grunt, bower, sass
 * libs: backbone, zepto, lodash, materialize
 
-## start
+## install
 
+```
+gem install sass
 npm install
 bower install
+```
+
+## start dev server
+
+```
 npm start
+```
+
+## build prod files
+
+```
+grunt build
+grunt dist
+```
