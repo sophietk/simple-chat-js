@@ -1,5 +1,7 @@
 # simple chat js
 
+[![droneio status](https://drone.io/github.com/sophietk/simple-chat-js/status.png)](https://drone.io/github.com/sophietk/simple-chat-js/latest)
+
 technos:
 
 * tools: node, grunt, bower, sass
