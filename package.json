@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./server/server.js"
+    "start": "node ./server/server.js",
+    "postinstall": "gem install sass && export PATH=$PATH:/app/vendor/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.12/bin && npm install -g grunt-cli && npm install -g bower && bower install && grunt build"
+  },
+  "engines": {
+    "node": ">=0.10"
   },
   "dependencies": {
     "body-parser": "~1.10.2",
