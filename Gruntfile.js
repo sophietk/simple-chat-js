@@ -1,3 +1,5 @@
+var sass = require('node-sass');
+
 module.exports = function (grunt) {
 
     grunt.initConfig({
@@ -17,6 +19,9 @@ module.exports = function (grunt) {
         },
 
         sass: {
+            options: {
+                implementation: sass
+            },
             dev: {
                 files: {
                     'app/css/style.css': 'app/sass/style.scss'
@@ -90,7 +95,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-contrib-concat');
